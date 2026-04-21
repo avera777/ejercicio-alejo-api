@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  background: #f5f5f5;
+  padding: 20px;
+  overflow-y: auto; /* solo esta parte puede hacer scroll */
+}

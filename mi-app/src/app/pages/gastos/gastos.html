@@ -1,0 +1,63 @@
+<h2>Lista de Gastos</h2>
+<p>Administra y revisa tus gastos recientes</p>
+
+<div class="header-actions">
+  <button (click)="abrirModal()">+ Nuevo Gasto</button>
+</div>
+
+@if (mostrarModal) {
+  <div class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Agregar un nuevo gasto</h3>
+        <button class="cerrar" (click)="cerrarModal()">X</button>
+      </div>
+
+      <div class="formulario-modal">
+            <input [(ngModel)]="descripcion" type="text" placeholder="Descripción" />
+            <input [(ngModel)]="monto" type="text" placeholder="Monto" />
+            <input [(ngModel)]="fecha" type="date" />
+            <select [(ngModel)]="categoria">
+  <option value="">Seleccione una categoría</option>
+  <option value="Vivienda">Vivienda</option>
+  <option value="Alimentación">Alimentación</option>
+  <option value="Transporte">Transporte</option>
+  <option value="Entretenimiento">Entretenimiento</option>
+  <option value="Salud">Salud</option>
+  <option value="Otros">Otros</option>
+</select>
+
+        <div class="acciones-modal">
+          <button class="btn-cancelar" (click)="cerrarModal()">Cancelar</button>
+          <button class="btn-guardar" (click)="guardarGasto()">Guardar Gasto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+      <th>Categoría</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+<tbody>
+  @for (gasto of listaGastos; track $index; let i = $index) {
+    <tr>
+      <td>{{ gasto.description }}</td>
+      <td>${{ gasto.amount }}</td>
+      <td>{{ gasto.date | date:'dd/MM/yyyy' }}</td>
+      <td>{{ mapearCategoriaFrontend(gasto.category) }}</td>
+      <td>
+        <span (click)="editarGasto(i)" style="cursor: pointer;">Editar</span> |
+        <span (click)="eliminarGasto(i)" style="cursor: pointer;">Eliminar</span>
+      </td>
+    </tr>
+  }
+</tbody>
+</table>
