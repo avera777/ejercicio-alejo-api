@@ -1,0 +1,17 @@
+<div class="login-page">
+  <div class="login-card">
+    <h3>Iniciar sesión</h3>
+
+    <label>Usuario</label>
+    <input type="text" [(ngModel)]="usuario" />
+
+    <small class="error">El usuario es obligatorio.</small>
+
+    <label>Contraseña</label>
+    <input type="password" [(ngModel)]="password" />
+
+    <small class="error">La contraseña es requerida.</small>
+
+    <button (click)="login()">Entrar</button>
+  </div>
+</div>

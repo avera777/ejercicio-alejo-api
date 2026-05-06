@@ -1,9 +1,11 @@
 .header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+
   padding: 10px 20px;
-  background-color: #2f4b8f; 
+
+  background-color: #2f4b8f;
 }
 
 .logo-icon {
@@ -14,4 +16,23 @@
   font-size: 18px;
   font-weight: 600;
   color: white;
+}
+
+.logout-btn {
+
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: white;
+  color: #2f4b8f;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  opacity: 0.9;
 }
