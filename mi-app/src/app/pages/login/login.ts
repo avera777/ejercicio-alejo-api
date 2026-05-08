@@ -27,7 +27,7 @@ export class Login {
       this.password === '123456'
     ) {
 
-      this.authService.login();
+      this.authService.login(this.usuario, this.password);
 
       this.router.navigate(['/']);
 
