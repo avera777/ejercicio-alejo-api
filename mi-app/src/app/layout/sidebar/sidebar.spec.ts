@@ -17,10 +17,29 @@ describe('Sidebar', () => {
 
     fixture = TestBed.createComponent(Sidebar);
     component = fixture.componentInstance;
+
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create sidebar component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render Dashboard menu', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain('Dashboard');
+  });
+
+  it('should render Gastos menu', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain('Gastos');
+  });
+
+  it('should render Ingresos menu', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain('Ingresos');
   });
 });

@@ -13,10 +13,21 @@ describe('Header', () => {
 
     fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+
+    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create header component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have logout method', () => {
+    expect(component.logout).toBeTruthy();
+  });
+
+  it('should render app title', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain('App Money Control');
   });
 });

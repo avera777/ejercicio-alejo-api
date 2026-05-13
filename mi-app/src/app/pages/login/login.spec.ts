@@ -13,10 +13,22 @@ describe('Login', () => {
 
     fixture = TestBed.createComponent(Login);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create login component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize usuario empty', () => {
+    expect(component.usuario).toBe('');
+  });
+
+  it('should initialize password empty', () => {
+    expect(component.password).toBe('');
+  });
+
+  it('should have login method', () => {
+    expect(component.login).toBeTruthy();
   });
 });

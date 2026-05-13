@@ -13,10 +13,17 @@ describe('Footer', () => {
 
     fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+
+    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create footer component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render footer text', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain('Cuidar los centavos');
   });
 });

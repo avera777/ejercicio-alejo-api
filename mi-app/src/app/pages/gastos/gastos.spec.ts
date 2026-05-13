@@ -32,10 +32,23 @@ describe('Gastos', () => {
 
     fixture = TestBed.createComponent(Gastos);
     component = fixture.componentInstance;
+
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create gastos component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have cargarGastos method', () => {
+    expect(component.cargarGastos).toBeTruthy();
+  });
+
+  it('should initialize listaGastos', () => {
+    expect(component.listaGastos).toBeDefined();
+  });
+
+  it('should initialize categoria empty', () => {
+    expect(component.categoria).toBe('');
   });
 });
